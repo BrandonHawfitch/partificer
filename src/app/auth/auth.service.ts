@@ -126,25 +126,26 @@ export class AuthService {
       _tokenExpirationDate: string;
     } = JSON.parse(localStorage.getItem('userData'));
     // Checks if userData is null
+
+    console.log(userData);
+
     if (!userData) {
       return;
     }
+
+    const expirationDate = new Date(userData._tokenExpirationDate);
+
     // Creates a User object from extracted data
     const user = new User(
       userData.email,
       userData.id,
       userData._token,
-      new Date(userData._tokenExpirationDate)
+      expirationDate
     );
     // If user token is valid, emit the user as the current user
     if (user.token) {
       this.user.next(user);
-
-      // Determine remaining time until token expiration and set it as such
-      const expirationDuration =
-        new Date(userData._tokenExpirationDate).getTime() -
-        new Date().getTime();
-      this.autoLogout(expirationDuration);
+      this.autoLogout(this.expirationDateToSecondsLeft(expirationDate));
     }
   }
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { initializeApp } from '@firebase/app';
 import { environment } from 'src/environments/environment';
+import { AuthService } from './auth/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,10 @@ import { environment } from 'src/environments/environment';
 export class AppComponent implements OnInit {
   title = 'partificer';
 
+  constructor(private authService: AuthService) {}
+
   ngOnInit() {
     const app = initializeApp(environment.firebaseConfig);
+    this.authService.autoLogin();
   }
 }

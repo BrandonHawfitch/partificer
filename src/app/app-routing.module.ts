@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './auth/auth.guard';
+import { GroupComponent } from './group/group.component';
 import { HomeComponent } from './home/home.component';
 // import { CompatibilityComponent } from './compatibility/compatibility.component';
 // import { PreferencesComponent } from './preferences/preferences.component';
@@ -15,6 +16,11 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'group',
+    component: GroupComponent,
     canActivate: [AuthGuard],
   },
   // {

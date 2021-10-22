@@ -11,9 +11,10 @@ import { SharedModule } from './shared/shared.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HomeComponent } from './home/home.component';
 import { CoreModule } from './core.module';
+import { GroupComponent } from './group/group.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, HomeComponent],
+  declarations: [AppComponent, HeaderComponent, HomeComponent, GroupComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

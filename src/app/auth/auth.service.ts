@@ -127,8 +127,6 @@ export class AuthService {
     } = JSON.parse(localStorage.getItem('userData'));
     // Checks if userData is null
 
-    console.log(userData);
-
     if (!userData) {
       return;
     }

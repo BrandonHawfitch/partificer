@@ -1,0 +1,250 @@
+[
+  {
+    "name": "Andrew",
+    "myChoices": [
+      {
+        "preference": "1",
+        "choices": [
+          ["Acting", 1],
+          ["Exploring", 3],
+          ["Instigating", 6],
+          ["Fighting", 5],
+          ["Optimizing", 2],
+          ["Problem Solving", 7],
+          ["Storytelling", 4]
+        ]
+      },
+      {
+        "preference": "2",
+        "choices": [
+          ["Fantasy", 7],
+          ["Horror", 6],
+          ["Mythical Fantasy", 6],
+          ["Science Fiction", 4],
+          ["Nautical", 3],
+          ["Comedy", 1],
+          ["Mystery", 6],
+          ["Fairy Tale", 2],
+          ["Wuxia", 2]
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Brad",
+    "myChoices": [
+      {
+        "preference": "1",
+        "choices": [
+          ["Acting", 2],
+          ["Exploring", 3],
+          ["Instigating", 4],
+          ["Fighting", 5],
+          ["Optimizing", 1],
+          ["Problem Solving", 6],
+          ["Storytelling", 7]
+        ]
+      },
+      {
+        "preference": "2",
+        "choices": [
+          ["Fantasy", 5],
+          ["Horror", 4],
+          ["Mythical Fantasy", 7],
+          ["Science Fiction", 3],
+          ["Nautical", 5],
+          ["Comedy", 1],
+          ["Mystery", 6],
+          ["Fairy Tale", 3],
+          ["Wuxia", 6]
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Caid",
+    "myChoices": [
+      {
+        "preference": "1",
+        "choices": [
+          ["Acting", 7],
+          ["Exploring", 5],
+          ["Instigating", 3],
+          ["Fighting", 2],
+          ["Optimizing", 1],
+          ["Problem Solving", 6],
+          ["Storytelling", 4]
+        ]
+      },
+      {
+        "preference": "2",
+        "choices": [
+          ["Fantasy", 6],
+          ["Horror", 5],
+          ["Mythical Fantasy", 7],
+          ["Science Fiction", 6],
+          ["Nautical", 1],
+          ["Comedy", 4],
+          ["Mystery", 5],
+          ["Fairy Tale", 2],
+          ["Wuxia", 4]
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Caytlin",
+    "myChoices": [
+      {
+        "preference": "1",
+        "choices": [
+          ["Acting", 4],
+          ["Exploring", 7],
+          ["Instigating", 3],
+          ["Fighting", 2],
+          ["Optimizing", 1],
+          ["Problem Solving", 5],
+          ["Storytelling", 6]
+        ]
+      },
+      {
+        "preference": "2",
+        "choices": [
+          ["Fantasy", 7],
+          ["Horror", 6],
+          ["Mythical Fantasy", 7],
+          ["Science Fiction", 6],
+          ["Nautical", 4],
+          ["Comedy", 1],
+          ["Mystery", 6],
+          ["Fairy Tale", 5],
+          ["Wuxia", 4]
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Chavez",
+    "myChoices": [
+      {
+        "preference": "1",
+        "choices": [
+          ["Acting", 2],
+          ["Exploring", 5],
+          ["Instigating", 4],
+          ["Fighting", 3],
+          ["Optimizing", 1],
+          ["Problem Solving", 6],
+          ["Storytelling", 7]
+        ]
+      },
+      {
+        "preference": "2",
+        "choices": [
+          ["Fantasy", 2],
+          ["Horror", 3],
+          ["Mythical Fantasy", 1],
+          ["Science Fiction", 4],
+          ["Nautical", 5],
+          ["Comedy", 6],
+          ["Mystery", 7],
+          ["Fairy Tale", 1],
+          ["Wuxia", 1]
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Madison",
+    "myChoices": [
+      {
+        "preference": "1",
+        "choices": [
+          ["Acting", 5],
+          ["Exploring", 6],
+          ["Instigating", 4],
+          ["Fighting", 3],
+          ["Optimizing", 1],
+          ["Problem Solving", 2],
+          ["Storytelling", 7]
+        ]
+      },
+      {
+        "preference": "2",
+        "choices": [
+          ["Fantasy", 3],
+          ["Horror", 5],
+          ["Mythical Fantasy", 7],
+          ["Science Fiction", 5],
+          ["Nautical", 7],
+          ["Comedy", 4],
+          ["Mystery", 2],
+          ["Fairy Tale", 7],
+          ["Wuxia", 6]
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Mikey",
+    "myChoices": [
+      {
+        "preference": "1",
+        "choices": [
+          ["Acting", 1],
+          ["Exploring", 6],
+          ["Instigating", 7],
+          ["Fighting", 2],
+          ["Optimizing", 3],
+          ["Problem Solving", 4],
+          ["Storytelling", 5]
+        ]
+      },
+      {
+        "preference": "2",
+        "choices": [
+          ["Fantasy", 4],
+          ["Horror", 7],
+          ["Mythical Fantasy", 7],
+          ["Science Fiction", 3],
+          ["Nautical", 5],
+          ["Comedy", 5],
+          ["Mystery", 5],
+          ["Fairy Tale", 3],
+          ["Wuxia", 7]
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Nathan",
+    "myChoices": [
+      {
+        "preference": "1",
+        "choices": [
+          ["Acting", 6],
+          ["Exploring", 3],
+          ["Instigating", 1],
+          ["Fighting", 7],
+          ["Optimizing", 5],
+          ["Problem Solving", 2],
+          ["Storytelling", 4]
+        ]
+      },
+      {
+        "preference": "2",
+        "choices": [
+          ["Fantasy", 7],
+          ["Horror", 7],
+          ["Mythical Fantasy", 7],
+          ["Science Fiction", 4],
+          ["Nautical", 1],
+          ["Comedy", 1],
+          ["Mystery", 1],
+          ["Fairy Tale", 4],
+          ["Wuxia", 4]
+        ]
+      }
+    ]
+  }
+]

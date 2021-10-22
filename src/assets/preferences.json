@@ -1,0 +1,36 @@
+[
+  {
+    "title": "Gameplay Aspect",
+    "description": "Gameplay Aspect Description",
+    "prefType": "RANKING",
+    "id": "1",
+    "options": ["1", "2", "3", "4", "5", "6", "7"],
+    "items": [
+      "Acting",
+      "Exploring",
+      "Instigating",
+      "Fighting",
+      "Optimizing",
+      "Problem Solving",
+      "Storytelling"
+    ]
+  },
+  {
+    "title": "Genre",
+    "description": "Genre Description",
+    "prefType": "RATING",
+    "id": "2",
+    "options": ["1", "2", "3", "4", "5", "6", "7"],
+    "items": [
+      "Fantasy",
+      "Horror",
+      "Mythical Fantasy",
+      "Science Fiction",
+      "Nautical",
+      "Comedy",
+      "Mystery",
+      "Fairy Tale",
+      "Wuxia"
+    ]
+  }
+]

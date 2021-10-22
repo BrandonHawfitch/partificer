@@ -40,7 +40,7 @@ export class AuthComponent implements OnInit {
       (response) => {
         console.log(response);
         this.isLoading = false;
-        this.router.navigate(['./recipes']);
+        this.router.navigate(['./']);
       },
       (error) => {
         console.log(error);
@@ -55,5 +55,19 @@ export class AuthComponent implements OnInit {
 
   onHandleError() {
     this.error = null;
+  }
+
+  onGoogleLogin() {
+    const authObservable = this.authService.googleLogin();
+    authObservable.subscribe(
+      (response) => {
+        console.log(response);
+        this.router.navigate(['/']);
+      },
+      (error) => {
+        console.log(error);
+        this.error = error;
+      }
+    );
   }
 }

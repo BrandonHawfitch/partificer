@@ -1,10 +1,16 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { BehaviorSubject, throwError } from 'rxjs';
-import { catchError, tap } from 'rxjs/operators';
+import { BehaviorSubject, from, Observable, throwError } from 'rxjs';
+import { catchError, map, switchMap, tap } from 'rxjs/operators';
 import { User } from './user.model';
 import { environment } from '../../environments/environment';
+import {
+  getAuth,
+  GoogleAuthProvider,
+  signInWithPopup,
+  UserCredential,
+} from 'firebase/auth';
 
 export interface AuthResponseData {
   idToken: string;
@@ -42,7 +48,7 @@ export class AuthService {
             resData.email,
             resData.localId,
             resData.idToken,
-            +resData.expiresIn
+            this.expirationSecondsLeftToDate(+resData.expiresIn)
           );
         })
       );
@@ -65,10 +71,40 @@ export class AuthService {
             resData.email,
             resData.localId,
             resData.idToken,
-            +resData.expiresIn
+            this.expirationSecondsLeftToDate(+resData.expiresIn)
           );
         })
       );
+  }
+
+  googleLogin() {
+    const provider = new GoogleAuthProvider();
+    const auth = getAuth();
+    const authObservable = from(signInWithPopup(auth, provider));
+
+    return authObservable.pipe(
+      switchMap((userCredential: UserCredential) => {
+        // Extracts credentials
+        const credential =
+          GoogleAuthProvider.credentialFromResult(userCredential);
+        const token = credential.accessToken;
+        const user = userCredential.user;
+        // Converts credentials into usable values
+        return from(user.getIdTokenResult()).pipe(
+          map((tokenResult) => {
+            const expirationDate = new Date(tokenResult.expirationTime);
+            return this.handleAuthentication(
+              user.email,
+              user.uid,
+              token,
+              expirationDate
+            );
+          }),
+          tap(() => this.router.navigate(['/'])),
+          catchError((error) => this.handleError(error))
+        );
+      })
+    );
   }
 
   logout() {
@@ -115,21 +151,22 @@ export class AuthService {
   autoLogout(expirationDuration: number) {
     this.tokenExpirationTimer = setTimeout(() => {
       this.logout();
-    }, expirationDuration);
+    }, expirationDuration * 1000);
   }
 
   private handleAuthentication(
     email: string,
     userId: string,
     token: string,
-    expiresIn: number
+    expirationDate: Date
   ) {
-    const expirationDate = new Date(new Date().getTime() + expiresIn * 1000);
     const user = new User(email, userId, token, expirationDate);
     this.user.next(user);
-    this.autoLogout(expiresIn * 1000);
+    this.autoLogout(this.expirationDateToSecondsLeft(expirationDate));
 
     localStorage.setItem('userData', JSON.stringify(user));
+
+    return user;
   }
 
   private handleError(errorResponse: HttpErrorResponse) {
@@ -152,5 +189,19 @@ export class AuthService {
         errorMessage = errorResponse.message;
     }
     return throwError(errorMessage);
+  }
+
+  private expirationDateToSecondsLeft(date: Date): number {
+    const curTime = new Date().getTime();
+    const expTime = date.getTime();
+    const secondsLeft = (expTime - curTime) / 1000;
+    return secondsLeft;
+  }
+
+  private expirationSecondsLeftToDate(expiresIn: number): Date {
+    const curTime = new Date().getTime();
+    const milsLeft = expiresIn * 1000;
+    const expirationDate = new Date(curTime + milsLeft);
+    return expirationDate;
   }
 }

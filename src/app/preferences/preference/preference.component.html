@@ -3,6 +3,6 @@
   <p>{{ preference.description }}</p>
   <app-ranking
     *ngIf="preference.prefType === 'RANKING'"
-    [choices]="member.getChoiceGroup(preference.title)"
+    [formControl]="control"
   ></app-ranking>
 </div>

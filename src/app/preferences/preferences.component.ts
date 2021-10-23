@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ChoiceGroup } from '../entities/choiceGroup';
+import { FormArray, FormControl } from '@angular/forms';
+import { Member } from '../entities/member';
 import { Preference } from '../entities/preference';
 import { MemberService } from '../shared/member.service';
 import { PreferenceService } from '../shared/preference.service';
@@ -11,19 +12,31 @@ import { PreferenceService } from '../shared/preference.service';
 })
 export class PreferencesComponent implements OnInit {
   preferences: Preference[];
-  choices: ChoiceGroup[];
+  member: Member;
+
+  preferencesForm: FormArray;
 
   constructor(
     private preferenceService: PreferenceService,
     private memberService: MemberService
   ) {
     this.preferences = preferenceService.getPreferences();
-    this.choices = memberService.getMember('Brad').myChoices;
+    this.member = memberService.getCurrentMember();
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    let preferencesForm = new FormArray([]);
+
+    this.preferences.forEach((preference) => {
+      preferencesForm.push(
+        new FormControl(this.getChoiceGroup(preference.title))
+      );
+    });
+  }
 
   public getChoiceGroup(prefTitle: string) {
-    return this.choices.find((choice) => choice.preference.title === prefTitle);
+    return this.member.getChoiceGroup(prefTitle);
   }
+
+  public saveChoices() {}
 }

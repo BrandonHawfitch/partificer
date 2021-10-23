@@ -19,6 +19,7 @@ import { PreferencesComponent } from './preferences/preferences.component';
 import { RankingComponent } from './preferences/ranking/ranking.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { PreferenceComponent } from './preferences/preference/preference.component';
+import { MembershipComponent } from './membership/membership.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { PreferenceComponent } from './preferences/preference/preference.compone
     PreferencesComponent,
     RankingComponent,
     PreferenceComponent,
+    MembershipComponent,
   ],
   imports: [
     BrowserModule,

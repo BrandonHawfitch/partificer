@@ -22,6 +22,5 @@ export class GroupComponent implements OnInit {
   ngOnInit(): void {
     this.preferences = this.preferenceService.getPreferences();
     this.members = this.memberService.getMembers();
-    console.log(this.members);
   }
 }

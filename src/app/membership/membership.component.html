@@ -1,0 +1,12 @@
+<th class="dropdown" appDropdown>
+  <a class="dropdown-toggle" role="button">Change Current Member</a>
+  <ul class="dropdown-menu">
+    <li *ngFor="let member of members">
+      <a style="cursor: pointer" (click)="onChangeMember(member)"
+        >{{ member.name }}
+      </a>
+    </li>
+  </ul>
+</th>
+
+<h1>Currently Logged in as : {{ currentMember.name }}</h1>

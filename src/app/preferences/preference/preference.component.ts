@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 import { Member } from 'src/app/entities/member';
 import { Preference } from 'src/app/entities/preference';
-import { MemberService } from 'src/app/shared/member.service';
 
 @Component({
   selector: 'app-preference',
@@ -12,11 +12,15 @@ export class PreferenceComponent implements OnInit {
   @Input()
   preference: Preference;
 
+  @Input()
   member: Member;
 
-  constructor(private memberService: MemberService) {}
+  control: FormControl;
+
+  constructor() {}
 
   ngOnInit(): void {
-    this.member = this.memberService.getMember('Brad');
+    const initial = this.member.getChoiceGroup(this.preference.title);
+    this.control = new FormControl(initial);
   }
 }

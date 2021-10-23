@@ -1,1 +1,24 @@
-<p>group works!</p>
+<div class="col-md-2">
+  <h3>Members</h3>
+  <p *ngFor="let member of members">
+    {{ member.name }}
+  </p>
+</div>
+<div class="col-md-10">
+  <div class="row" *ngFor="let preference of preferences">
+    <h2>{{ preference.title }}</h2>
+    <hr />
+    <div class="col-md-4">
+      <app-direct-comparison
+        [preference]="preference"
+        [members]="members"
+      ></app-direct-comparison>
+    </div>
+    <div class="col-md-6">
+      <app-compatibility-table
+        [preference]="preference"
+        [members]="members"
+      ></app-compatibility-table>
+    </div>
+  </div>
+</div>

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './auth/auth.guard';
+import { GroupResolverService } from './group/group-resolver.service';
 import { GroupComponent } from './group/group.component';
 import { HomeComponent } from './home/home.component';
 // import { CompatibilityComponent } from './compatibility/compatibility.component';
@@ -22,6 +23,7 @@ const routes: Routes = [
     path: 'group',
     component: GroupComponent,
     canActivate: [AuthGuard],
+    resolve: [GroupResolverService],
   },
   // {
   //   path: 'profile',

@@ -1,6 +1,6 @@
 // A preference defines the behavior for a choice or set of choices by defining both the items
 // that are to be chosen, and the options available for each item
-class Preference {
+export class Preference {
   // In this context, an option is just the label that is displayed for said option
   // Options are assumed to be in the preferred order
   options: string[] = [];
@@ -18,6 +18,6 @@ class Preference {
 
   equals(other: Preference): boolean {
     // return this.id == other.id;
-    return this.title === other.title;
+    return this.id === other.id;
   }
 }

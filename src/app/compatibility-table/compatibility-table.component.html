@@ -1,0 +1,20 @@
+<table class="table table-striped table-sm table-bordered">
+  <caption>
+    Compatibility
+  </caption>
+  <thead>
+    <tr>
+      <th></th>
+      <th *ngFor="let member of members">{{ member.name }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let memberA of members">
+      <th>{{ memberA.name }}</th>
+      <td
+        *ngFor="let memberB of members"
+        [tableFormat]="getCompatibility(memberA, memberB)"
+      ></td>
+    </tr>
+  </tbody>
+</table>

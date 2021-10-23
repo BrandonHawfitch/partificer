@@ -1,0 +1,45 @@
+<table class="table table-striped table-sm table-bordered">
+  <caption>
+    Comparison
+  </caption>
+  <thead>
+    <tr>
+      <th></th>
+      <th class="dropdown" appDropdown>
+        <a class="dropdown-toggle" role="button">
+          {{ memberA ? memberA.name : "Member A" }}<span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+          <li *ngFor="let member of members">
+            <a style="cursor: pointer" (click)="onSelectMemberA(member)">
+              {{ member.name }}
+            </a>
+          </li>
+        </ul>
+      </th>
+      <th class="dropdown" appDropdown>
+        <a class="dropdown-toggle" role="button">
+          {{ memberB ? memberB.name : "Member B" }}<span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+          <li *ngFor="let member of members">
+            <a style="cursor: pointer" (click)="onSelectMemberB(member)">
+              {{ member.name }}
+            </a>
+          </li>
+        </ul>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of preference.items">
+      <th>{{ item }}</th>
+      <td>
+        {{ memberA ? memberA.getChoiceValue(preference.title, item) : "" }}
+      </td>
+      <td>
+        {{ memberB ? memberB.getChoiceValue(preference.title, item) : "" }}
+      </td>
+    </tr>
+  </tbody>
+</table>

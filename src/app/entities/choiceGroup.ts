@@ -1,10 +1,18 @@
+import {
+  ChoiceGroupStrategy,
+  RankingStrategy,
+  RatingStrategy,
+  Scale,
+} from './choiceGroupStrategy';
+import { Preference } from './preference';
+
 // This class is used to group multiple Choices that belong to a single preference
-class ChoiceGroup implements Comparable<ChoiceGroup> {
+export class ChoiceGroup implements Comparable<ChoiceGroup> {
   choices: Map<string, number> = new Map();
   strategy: ChoiceGroupStrategy;
 
   constructor(public preference: Preference) {
-    if (preference.prefType === 'Ranking') {
+    if (preference.prefType === 'RANKING') {
       this.strategy = new RankingStrategy(new Scale(preference));
     } else {
       this.strategy = new RatingStrategy(new Scale(preference));
@@ -32,6 +40,10 @@ class ChoiceGroup implements Comparable<ChoiceGroup> {
 
   setChoice(itemName: string, optionValue: number): void {
     this.choices.set(itemName, optionValue);
+  }
+
+  getChoice(itemName: string) {
+    return this.choices.get(itemName);
   }
 }
 

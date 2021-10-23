@@ -1,12 +1,14 @@
+import { Preference } from './preference';
+
 // This interface is used to define strategies used for calculating compatibility from within a single choice group
-interface ChoiceGroupStrategy {
+export interface ChoiceGroupStrategy {
   // Calculates the maximum sum of the differences between choices
   calculateMaxDifferenceSum(preference: Preference): number;
   // Calculates the difference score between two choices
   calculateDifferenceScore(optionValue1: number, optionValue2: number): number;
 }
 
-class RankingStrategy implements ChoiceGroupStrategy {
+export class RankingStrategy implements ChoiceGroupStrategy {
   constructor(public scale: Scale) {}
 
   calculateMaxDifferenceSum(preference: Preference) {
@@ -21,7 +23,7 @@ class RankingStrategy implements ChoiceGroupStrategy {
   }
 }
 
-class RatingStrategy implements ChoiceGroupStrategy {
+export class RatingStrategy implements ChoiceGroupStrategy {
   constructor(public scale: Scale) {}
 
   calculateMaxDifferenceSum(preference: Preference) {
@@ -37,7 +39,7 @@ class RatingStrategy implements ChoiceGroupStrategy {
 }
 
 // A scale establishes a numerical relationship between the options provided by a preference
-class Scale {
+export class Scale {
   // Mapping from option number value to its string representation or label
   options: Map<number, string> = new Map();
   max: number;

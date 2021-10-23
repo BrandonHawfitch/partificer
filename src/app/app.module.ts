@@ -12,9 +12,20 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HomeComponent } from './home/home.component';
 import { CoreModule } from './core.module';
 import { GroupComponent } from './group/group.component';
+import { DirectComparisonComponent } from './direct-comparison/direct-comparison.component';
+import { CompatibilityTableComponent } from './compatibility-table/compatibility-table.component';
+import { TableFormatDirective } from './compatibility-table/table-format.directive';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, HomeComponent, GroupComponent],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    HomeComponent,
+    GroupComponent,
+    DirectComparisonComponent,
+    CompatibilityTableComponent,
+    TableFormatDirective,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,

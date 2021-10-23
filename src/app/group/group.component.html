@@ -6,7 +6,8 @@
 </div>
 <div class="col-md-10">
   <div class="row" *ngFor="let preference of preferences">
-    <h2>{{ preference.title }}</h2>
+    <hr />
+    <h2>{{ preference.title }} - {{ preference.description }}</h2>
     <hr />
     <div class="col-md-4">
       <app-direct-comparison

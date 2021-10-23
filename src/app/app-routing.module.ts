@@ -4,6 +4,7 @@ import { AuthGuard } from './auth/auth.guard';
 import { GroupResolverService } from './group/group-resolver.service';
 import { GroupComponent } from './group/group.component';
 import { HomeComponent } from './home/home.component';
+import { PreferencesComponent } from './preferences/preferences.component';
 // import { CompatibilityComponent } from './compatibility/compatibility.component';
 // import { PreferencesComponent } from './preferences/preferences.component';
 // import { ProfileComponent } from './profile/profile.component';
@@ -30,11 +31,12 @@ const routes: Routes = [
   //   component: ProfileComponent,
   //   canActivate: [AuthGuard],
   // },
-  // {
-  //   path: 'preferences',
-  //   component: PreferencesComponent,
-  //   canActivate: [AuthGuard],
-  // },
+  {
+    path: 'preferences',
+    component: PreferencesComponent,
+    canActivate: [AuthGuard],
+    resolve: [GroupResolverService],
+  },
   {
     path: '',
     component: HomeComponent,

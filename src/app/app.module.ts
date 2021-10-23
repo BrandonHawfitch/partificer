@@ -15,6 +15,10 @@ import { GroupComponent } from './group/group.component';
 import { DirectComparisonComponent } from './direct-comparison/direct-comparison.component';
 import { CompatibilityTableComponent } from './compatibility-table/compatibility-table.component';
 import { TableFormatDirective } from './compatibility-table/table-format.directive';
+import { PreferencesComponent } from './preferences/preferences.component';
+import { RankingComponent } from './preferences/ranking/ranking.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { PreferenceComponent } from './preferences/preference/preference.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +29,9 @@ import { TableFormatDirective } from './compatibility-table/table-format.directi
     DirectComparisonComponent,
     CompatibilityTableComponent,
     TableFormatDirective,
+    PreferencesComponent,
+    RankingComponent,
+    PreferenceComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,6 +42,7 @@ import { TableFormatDirective } from './compatibility-table/table-format.directi
     NgbModule,
     CoreModule,
     ReactiveFormsModule,
+    DragDropModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -25,10 +25,10 @@ export class PreferencesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    let preferencesForm = new FormArray([]);
+    this.preferencesForm = new FormArray([]);
 
     this.preferences.forEach((preference) => {
-      preferencesForm.push(
+      this.preferencesForm.push(
         new FormControl(this.getChoiceGroup(preference.title))
       );
     });
@@ -38,5 +38,7 @@ export class PreferencesComponent implements OnInit {
     return this.member.getChoiceGroup(prefTitle);
   }
 
-  public saveChoices() {}
+  public saveChoices() {
+    console.log(this.preferencesForm);
+  }
 }

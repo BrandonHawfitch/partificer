@@ -63,5 +63,6 @@ export class RankingComponent implements ControlValueAccessor {
         this.onTouched();
       }
     }
+    console.log(this.choicesArray);
   }
 }

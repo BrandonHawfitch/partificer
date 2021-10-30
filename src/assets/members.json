@@ -5,12 +5,12 @@
       {
         "preference": "1",
         "choices": [
-          ["Acting", 1],
-          ["Exploring", 3],
-          ["Instigating", 6],
-          ["Fighting", 5],
-          ["Optimizing", 2],
-          ["Problem Solving", 7],
+          ["Acting", 7],
+          ["Exploring", 5],
+          ["Instigating", 2],
+          ["Fighting", 3],
+          ["Optimizing", 6],
+          ["Problem Solving", 1],
           ["Storytelling", 4]
         ]
       },
@@ -36,13 +36,13 @@
       {
         "preference": "1",
         "choices": [
-          ["Acting", 2],
-          ["Exploring", 3],
+          ["Acting", 6],
+          ["Exploring", 5],
           ["Instigating", 4],
-          ["Fighting", 5],
-          ["Optimizing", 1],
-          ["Problem Solving", 6],
-          ["Storytelling", 7]
+          ["Fighting", 3],
+          ["Optimizing", 7],
+          ["Problem Solving", 2],
+          ["Storytelling", 1]
         ]
       },
       {
@@ -67,12 +67,12 @@
       {
         "preference": "1",
         "choices": [
-          ["Acting", 7],
-          ["Exploring", 5],
-          ["Instigating", 3],
-          ["Fighting", 2],
-          ["Optimizing", 1],
-          ["Problem Solving", 6],
+          ["Acting", 1],
+          ["Exploring", 3],
+          ["Instigating", 5],
+          ["Fighting", 6],
+          ["Optimizing", 7],
+          ["Problem Solving", 2],
           ["Storytelling", 4]
         ]
       },
@@ -99,12 +99,12 @@
         "preference": "1",
         "choices": [
           ["Acting", 4],
-          ["Exploring", 7],
-          ["Instigating", 3],
-          ["Fighting", 2],
-          ["Optimizing", 1],
-          ["Problem Solving", 5],
-          ["Storytelling", 6]
+          ["Exploring", 1],
+          ["Instigating", 5],
+          ["Fighting", 6],
+          ["Optimizing", 7],
+          ["Problem Solving", 3],
+          ["Storytelling", 2]
         ]
       },
       {
@@ -129,13 +129,13 @@
       {
         "preference": "1",
         "choices": [
-          ["Acting", 2],
-          ["Exploring", 5],
+          ["Acting", 6],
+          ["Exploring", 3],
           ["Instigating", 4],
-          ["Fighting", 3],
-          ["Optimizing", 1],
-          ["Problem Solving", 6],
-          ["Storytelling", 7]
+          ["Fighting", 5],
+          ["Optimizing", 7],
+          ["Problem Solving", 2],
+          ["Storytelling", 1]
         ]
       },
       {
@@ -160,13 +160,13 @@
       {
         "preference": "1",
         "choices": [
-          ["Acting", 5],
-          ["Exploring", 6],
+          ["Acting", 3],
+          ["Exploring", 2],
           ["Instigating", 4],
-          ["Fighting", 3],
-          ["Optimizing", 1],
-          ["Problem Solving", 2],
-          ["Storytelling", 7]
+          ["Fighting", 5],
+          ["Optimizing", 7],
+          ["Problem Solving", 6],
+          ["Storytelling", 1]
         ]
       },
       {
@@ -191,13 +191,13 @@
       {
         "preference": "1",
         "choices": [
-          ["Acting", 1],
-          ["Exploring", 6],
-          ["Instigating", 7],
-          ["Fighting", 2],
-          ["Optimizing", 3],
+          ["Acting", 7],
+          ["Exploring", 2],
+          ["Instigating", 1],
+          ["Fighting", 6],
+          ["Optimizing", 5],
           ["Problem Solving", 4],
-          ["Storytelling", 5]
+          ["Storytelling", 3]
         ]
       },
       {
@@ -222,12 +222,12 @@
       {
         "preference": "1",
         "choices": [
-          ["Acting", 6],
-          ["Exploring", 3],
-          ["Instigating", 1],
-          ["Fighting", 7],
-          ["Optimizing", 5],
-          ["Problem Solving", 2],
+          ["Acting", 2],
+          ["Exploring", 5],
+          ["Instigating", 7],
+          ["Fighting", 1],
+          ["Optimizing", 3],
+          ["Problem Solving", 6],
           ["Storytelling", 4]
         ]
       },

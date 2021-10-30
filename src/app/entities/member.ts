@@ -25,6 +25,20 @@ export class Member {
     const choiceValue = choiceGroup.getChoice(itemName);
     return choiceValue;
   }
+
+  setChoiceGroup(choice: ChoiceGroup, prefTitle?: string) {
+    if (!prefTitle) {
+      prefTitle = choice.preference.title;
+    }
+    for (let i = 0; i < this.myChoices.length; i++) {
+      const oldChoice = this.myChoices[i];
+      if (oldChoice.preference.title === prefTitle) {
+        this.myChoices[i] = choice;
+        return true;
+      }
+    }
+    return false;
+  }
 }
 
 export class Group {

@@ -1,17 +1,15 @@
 <div class="col-md-4">
   <button class="btn btn-primary" (click)="saveChoices()">Save</button>
 </div>
-<div class="col-md-4">
-  <app-preference
-    *ngFor="let preference of preferences"
-    [preference]="preference"
-    [member]="member"
-  >
-    <div>
-      <h3>{{ preference.title }}</h3>
-      <p>{{ preference.description }}</p>
-      <app-ranking *ngIf="preference.prefType === 'RANKING'"></app-ranking>
-    </div>
-  </app-preference>
+<div class="col-md-4" [formGroup]="preferencesForm">
+  <div class="preference" *ngFor="let preference of preferences">
+    <h3>{{ preference.title }}</h3>
+    <p>{{ preference.description }}</p>
+    <app-ranking
+      *ngIf="preference.prefType === 'RANKING'"
+      [choices]="getChoiceGroup(preference.title)"
+      [formControlName]="preference.title"
+    ></app-ranking>
+  </div>
 </div>
 <div class="col-md-4"></div>

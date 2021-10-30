@@ -10,3 +10,11 @@
 </th>
 
 <h1>Currently Logged in as : {{ currentMember.name }}</h1>
+
+<h3>{{ currentMember.name }}'s Choices:</h3>
+<div *ngFor="let choice of currentMember.myChoices">
+  <h4>{{ choice.preference.title }}:</h4>
+  <div *ngFor="let choice of choice.toArray()">
+    {{ choice[0] }} - {{ choice[1] }}
+  </div>
+</div>

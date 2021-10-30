@@ -51,6 +51,12 @@ export class ChoiceGroup implements Comparable<ChoiceGroup> {
     const result = Array.from(iterable);
     return result;
   }
+
+  setChoices(newChoices: Array<[string, number]>) {
+    newChoices.forEach((choice: [string, number]) => {
+      this.setChoice(choice[0], choice[1]);
+    });
+  }
 }
 
 // This interface is used to specify calculations used for determining compatibility

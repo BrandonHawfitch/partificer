@@ -16,6 +16,9 @@
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
+        <!-- <li routerLinkActive="active">
+          <a (click)="onSave()">Print Members</a>
+        </li> -->
         <li routerLinkActive="active" *ngIf="!isAuthenticated">
           <a routerLink="/auth">Authenticate</a>
         </li>

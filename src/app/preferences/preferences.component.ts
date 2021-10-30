@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormControl } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
+import { ChoiceGroup } from '../entities/choiceGroup';
 import { Member } from '../entities/member';
 import { Preference } from '../entities/preference';
 import { MemberService } from '../shared/member.service';
@@ -14,7 +15,7 @@ export class PreferencesComponent implements OnInit {
   preferences: Preference[];
   member: Member;
 
-  preferencesForm: FormArray;
+  preferencesForm: FormGroup;
 
   constructor(
     private preferenceService: PreferenceService,
@@ -25,10 +26,10 @@ export class PreferencesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.preferencesForm = new FormArray([]);
-
+    this.preferencesForm = new FormGroup({});
     this.preferences.forEach((preference) => {
-      this.preferencesForm.push(
+      this.preferencesForm.addControl(
+        preference.title,
         new FormControl(this.getChoiceGroup(preference.title))
       );
     });
@@ -39,6 +40,7 @@ export class PreferencesComponent implements OnInit {
   }
 
   public saveChoices() {
-    console.log(this.preferencesForm);
+    let newChoices = this.preferencesForm.value;
+    this.memberService.savePreferences(newChoices);
   }
 }

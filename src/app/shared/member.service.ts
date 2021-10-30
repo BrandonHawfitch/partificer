@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
+import { ChoiceGroup } from '../entities/choiceGroup';
 import { Member } from '../entities/member';
 
 @Injectable({
@@ -10,7 +11,7 @@ export class MemberService {
 
   currentMemberChanged = new Subject();
 
-  private currentMember: Member = null;
+  private currentMemberIndex: number = 0;
 
   private members: Member[] = [];
 
@@ -40,17 +41,23 @@ export class MemberService {
   }
 
   getCurrentMember(): Member {
-    if (!this.currentMember) {
-      return this.getMember('Andrew');
-    }
-    return this.currentMember;
+    return this.members[this.currentMemberIndex];
   }
 
   setCurrentMember(name: string): void {
-    const mem = this.getMember(name);
-    if (!!mem) {
-      this.currentMember = mem;
-      this.currentMemberChanged.next();
+    this.members.forEach((member: Member, index: number) => {
+      if (member.name === name) {
+        this.currentMemberIndex = index;
+        this.currentMemberChanged.next();
+      }
+    });
+  }
+
+  savePreferences(choices: { [prefTitle: string]: ChoiceGroup }) {
+    const curMem = this.getCurrentMember();
+    for (const prefTitle in choices) {
+      const newChoice = choices[prefTitle];
+      curMem.setChoiceGroup(newChoice, prefTitle);
     }
   }
 }

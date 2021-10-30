@@ -4,7 +4,7 @@ import {
   Resolve,
   RouterStateSnapshot,
 } from '@angular/router';
-import { combineLatest, Observable } from 'rxjs';
+import { combineLatest, Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Member } from '../entities/member';
 import { Preference } from '../entities/preference';
@@ -28,10 +28,22 @@ export class GroupResolverService
     let members = this.memberService.getMembers();
     let preferences = this.preferenceService.getPreferences();
 
-    const combined = combineLatest([
-      this.dataStorageService.fetchPreferences(),
-      this.dataStorageService.fetchMembers(),
-    ]).pipe(
+    let memsObs: Observable<Member[]>;
+    let prefsObs: Observable<Preference[]>;
+
+    if (preferences.length === 0) {
+      prefsObs = this.dataStorageService.fetchPreferences();
+    } else {
+      prefsObs = of(preferences);
+    }
+
+    if (members.length === 0) {
+      memsObs = this.dataStorageService.fetchMembers();
+    } else {
+      memsObs = of(members);
+    }
+
+    const combined = combineLatest([prefsObs, memsObs]).pipe(
       map((combo) => {
         if (members.length === 0) {
           members = combo[1];

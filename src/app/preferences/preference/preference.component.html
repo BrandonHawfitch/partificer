@@ -1,8 +1,9 @@
 <div>
-  <h3>{{ preference.title }}</h3>
-  <p>{{ preference.description }}</p>
-  <app-ranking
+  <!-- <h3>{{ preference.title }}</h3>
+  <p>{{ preference.description }}</p> -->
+  <!-- <app-ranking
     *ngIf="preference.prefType === 'RANKING'"
     [formControl]="control"
-  ></app-ranking>
+  ></app-ranking> -->
+  <ng-content></ng-content>
 </div>

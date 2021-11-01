@@ -1,0 +1,8 @@
+<table [formGroup]="ratingForm">
+  <tr *ngFor="let choice of choicesArray">
+    <td class="index-box">{{ choice[0] }}</td>
+    <td class="example-box">
+      <input type="number" max="7" min="1" [formControlName]="choice[0]" />
+    </td>
+  </tr>
+</table>

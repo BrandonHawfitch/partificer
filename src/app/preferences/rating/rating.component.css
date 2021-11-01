@@ -1,0 +1,46 @@
+table,
+th,
+td {
+  border: solid 1px #ccc;
+}
+
+table {
+  width: 100%;
+}
+
+th {
+  font-size: large;
+  padding: 10px;
+}
+
+.example-box {
+  padding: 20px 10px;
+  color: rgba(0, 0, 0, 0.87);
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  background: white;
+  font-size: 14px;
+}
+
+.index-box {
+  padding: 20px 10px;
+  color: rgba(0, 0, 0, 0.87);
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  background: white;
+  text-align: center;
+  font-size: 14px;
+}
+
+.rating-list {
+  max-width: 100%;
+  border: solid 1px #ccc;
+  background: white;
+  border-radius: 4px;
+  overflow: hidden;
+  display: block;
+}

@@ -18,8 +18,8 @@ import { TableFormatDirective } from './compatibility-table/table-format.directi
 import { PreferencesComponent } from './preferences/preferences.component';
 import { RankingComponent } from './preferences/ranking/ranking.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
-import { PreferenceComponent } from './preferences/preference/preference.component';
 import { MembershipComponent } from './membership/membership.component';
+import { RatingComponent } from './preferences/rating/rating.component';
 
 @NgModule({
   declarations: [
@@ -32,8 +32,8 @@ import { MembershipComponent } from './membership/membership.component';
     TableFormatDirective,
     PreferencesComponent,
     RankingComponent,
-    PreferenceComponent,
     MembershipComponent,
+    RatingComponent,
   ],
   imports: [
     BrowserModule,

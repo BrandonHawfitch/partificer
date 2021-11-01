@@ -28,19 +28,25 @@ export class PreferencesComponent implements OnInit {
   ngOnInit(): void {
     this.preferencesForm = new FormGroup({});
     this.preferences.forEach((preference) => {
-      this.preferencesForm.addControl(
-        preference.title,
-        new FormControl(this.getChoiceGroup(preference.title))
-      );
+      if (preference.prefType === 'RANKING') {
+        this.preferencesForm.addControl(
+          preference.title,
+          new FormControl(this.getChoiceGroup(preference.title))
+        );
+      } else if (preference.prefType === 'RATING') {
+        this.preferencesForm.addControl(preference.title, new FormGroup({}));
+      }
     });
   }
 
   public getChoiceGroup(prefTitle: string) {
+    console.log(prefTitle);
     return this.member.getChoiceGroup(prefTitle);
   }
 
   public saveChoices() {
     let newChoices = this.preferencesForm.value;
+    console.log(this.preferencesForm);
     this.memberService.savePreferences(newChoices);
   }
 }

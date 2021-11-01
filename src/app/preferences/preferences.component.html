@@ -10,6 +10,11 @@
       [choices]="getChoiceGroup(preference.title)"
       [formControlName]="preference.title"
     ></app-ranking>
+    <app-rating
+      *ngIf="preference.prefType === 'RATING'"
+      [choices]="getChoiceGroup(preference.title)"
+      [formGroupName]="preference.title"
+    ></app-rating>
   </div>
 </div>
 <div class="col-md-4"></div>

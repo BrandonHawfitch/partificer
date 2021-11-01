@@ -8,12 +8,21 @@
       <th *ngFor="let member of members">{{ member.name }}</th>
     </tr>
   </thead>
-  <tbody>
+  <tbody *ngIf="preference">
     <tr *ngFor="let memberA of members">
       <th>{{ memberA.name }}</th>
       <td
         *ngFor="let memberB of members"
         [tableFormat]="getCompatibility(memberA, memberB)"
+      ></td>
+    </tr>
+  </tbody>
+  <tbody *ngIf="!preference">
+    <tr *ngFor="let memberA of members">
+      <th>{{ memberA.name }}</th>
+      <td
+        *ngFor="let memberB of members"
+        [tableFormat]="getCumulativeCompatibility(memberA, memberB)"
       ></td>
     </tr>
   </tbody>

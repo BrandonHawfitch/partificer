@@ -8,7 +8,7 @@ export class Member {
   constructor(public name: string) {}
 
   getChoiceGroup(prefTitle: string): ChoiceGroup | undefined {
-    console.log(this.myChoices);
+    // console.log(this.myChoices);
     for (let choice of this.myChoices) {
       if (choice.preference.title === prefTitle) {
         return choice;

@@ -1,4 +1,8 @@
 <table [formGroup]="ratingForm">
+  <thead>
+    <th style="width: 60%">Item</th>
+    <th style="width: 40%">Rating</th>
+  </thead>
   <tr *ngFor="let choice of choicesArray">
     <td class="index-box">{{ choice[0] }}</td>
     <td class="example-box">

@@ -23,6 +23,7 @@ import { ChoiceGroup } from 'src/app/entities/choiceGroup';
 export class RatingComponent implements ControlValueAccessor, OnInit {
   @Input()
   set choices(choices: ChoiceGroup) {
+    // console.log(choices);
     this._choices = choices;
     this.choicesArray = choices.toArray();
     this.formName = choices.preference.title;
@@ -32,7 +33,7 @@ export class RatingComponent implements ControlValueAccessor, OnInit {
 
   public formName = '';
 
-  public choicesArray: Array<[string, number]>;
+  public choicesArray: Array<[string, number]> = [];
 
   ratingForm: FormGroup;
 
@@ -47,13 +48,18 @@ export class RatingComponent implements ControlValueAccessor, OnInit {
   constructor(private controlContainer: ControlContainer) {}
 
   ngOnInit(): void {
-    this.ratingForm = <FormGroup>this.controlContainer.control;
+    this.ratingForm = new FormGroup({});
     this.choicesArray.forEach((choice) => {
       this.ratingForm.addControl(choice[0], new FormControl(choice[1]));
+    });
+    this.ratingForm.valueChanges.subscribe((value) => {
+      console.log(value);
+      this.onChange(this.choicesObjectToGroup(value));
     });
   }
 
   writeValue(choices: ChoiceGroup): void {
+    // console.log(choices);
     this.choices = choices;
   }
   registerOnChange(onChange: any): void {
@@ -75,5 +81,18 @@ export class RatingComponent implements ControlValueAccessor, OnInit {
       newChoices.setChoice(choice[0], correctedIndex);
     });
     return newChoices;
+  }
+
+  private choicesObjectToGroup(choicesObject: {
+    [key: string]: number;
+  }): ChoiceGroup {
+    const choiceGroup = new ChoiceGroup(this._choices.preference);
+    for (const itemName in choicesObject) {
+      if (Object.prototype.hasOwnProperty.call(choicesObject, itemName)) {
+        const optionValue = choicesObject[itemName];
+        choiceGroup.setChoice(itemName, optionValue);
+      }
+    }
+    return choiceGroup;
   }
 }

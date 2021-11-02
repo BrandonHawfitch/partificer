@@ -3,6 +3,11 @@
   <p *ngFor="let member of members">
     {{ member.name }}
   </p>
+  <hr />
+  <h3>Preferences</h3>
+  <p *ngFor="let preference of preferences">
+    {{ preference.title }}
+  </p>
 </div>
 <div class="col-md-10">
   <div class="row" *ngFor="let preference of preferences">
@@ -24,7 +29,7 @@
   </div>
   <div class="row">
     <hr />
-    <h2>Cumulative Compatibility</h2>
+    <h2>Cumulative Compatibility - Evenly weighted across all preferences</h2>
     <hr />
     <div class="col-md-2"></div>
     <div class="col-md-6">

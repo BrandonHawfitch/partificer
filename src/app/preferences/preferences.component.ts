@@ -48,6 +48,7 @@ export class PreferencesComponent implements OnInit {
 
   public saveChoices() {
     let newChoices = this.preferencesForm.value;
+    console.log(this.preferencesForm);
     this.memberService.savePreferences(newChoices);
   }
 }

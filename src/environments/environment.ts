@@ -5,13 +5,13 @@
 export const environment = {
   production: false,
   firebaseConfig: {
-    apiKey: 'AIzaSyAkWJAhXrUvJjGIR9rRu_ROfzlSReiv99w',
-    authDomain: 'player-compatibility.firebaseapp.com',
-    projectId: 'player-compatibility',
-    storageBucket: 'player-compatibility.appspot.com',
-    messagingSenderId: '17983999167',
-    appId: '1:17983999167:web:595fbb2e3e91e23c334a0a',
-    measurementId: 'G-R5N3F23J4P',
+    apiKey: 'AIzaSyD7XZ8BqGRPDm14nQpEk5gBNvecVaWY_PI',
+    authDomain: 'partificer-ab084.firebaseapp.com',
+    projectId: 'partificer-ab084',
+    storageBucket: 'partificer-ab084.appspot.com',
+    messagingSenderId: '962284246729',
+    appId: '1:962284246729:web:e019333ded295a0a799f18',
+    measurementId: '${config.measurementId}',
   },
 };
 

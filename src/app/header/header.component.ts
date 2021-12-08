@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Subscription } from 'rxjs';
-import { AuthService } from '../auth/auth.service';
 import { MemberService } from '../shared/member.service';
 
 @Component({
@@ -13,12 +13,12 @@ export class HeaderComponent implements OnInit, OnDestroy {
   isAuthenticated = false;
 
   constructor(
-    private authService: AuthService,
+    private afAuth: AngularFireAuth,
     private memberService: MemberService
   ) {}
 
   ngOnInit(): void {
-    this.subscription = this.authService.user.subscribe((user) => {
+    this.subscription = this.afAuth.authState.subscribe((user) => {
       this.isAuthenticated = !!user;
     });
   }
@@ -37,6 +37,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   onLogout() {
-    this.authService.logout();
+    this.afAuth.signOut();
   }
 }

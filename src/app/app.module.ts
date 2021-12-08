@@ -4,7 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { AuthComponent } from './auth/auth.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './shared/shared.module';
@@ -20,6 +19,9 @@ import { RankingComponent } from './preferences/ranking/ranking.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MembershipComponent } from './membership/membership.component';
 import { RatingComponent } from './preferences/rating/rating.component';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -45,6 +47,8 @@ import { RatingComponent } from './preferences/rating/rating.component';
     CoreModule,
     ReactiveFormsModule,
     DragDropModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

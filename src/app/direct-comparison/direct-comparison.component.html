@@ -5,27 +5,33 @@
   <thead>
     <tr>
       <th></th>
-      <th class="dropdown" appDropdown>
-        <a class="dropdown-toggle" role="button">
+      <th ngbDropdown class="dropdown">
+        <a ngbDropdownToggle style="cursor: pointer">
           {{ memberA ? memberA.name : "Member A" }}<span class="caret"></span>
         </a>
-        <ul class="dropdown-menu">
-          <li *ngFor="let member of members">
-            <a style="cursor: pointer" (click)="onSelectMemberA(member)">
-              {{ member.name }}
-            </a>
+        <ul ngbDropdownMenu>
+          <li
+            ngbDropdownItem
+            *ngFor="let member of members"
+            style="cursor: pointer"
+            (click)="onSelectMemberA(member)"
+          >
+            {{ member.name }}
           </li>
         </ul>
       </th>
-      <th class="dropdown" appDropdown>
-        <a class="dropdown-toggle" role="button">
+      <th ngbDropdown class="dropdown">
+        <a ngbDropdownToggle style="cursor: pointer">
           {{ memberB ? memberB.name : "Member B" }}<span class="caret"></span>
         </a>
-        <ul class="dropdown-menu">
-          <li *ngFor="let member of members">
-            <a style="cursor: pointer" (click)="onSelectMemberB(member)">
-              {{ member.name }}
-            </a>
+        <ul ngbDropdownMenu>
+          <li
+            ngbDropdownItem
+            *ngFor="let member of members"
+            style="cursor: pointer"
+            (click)="onSelectMemberB(member)"
+          >
+            {{ member.name }}
           </li>
         </ul>
       </th>

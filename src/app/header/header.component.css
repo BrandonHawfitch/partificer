@@ -1,0 +1,50 @@
+/* Sets text color for all text */
+* {
+  color: black;
+}
+
+/* Creates stretch navbar */
+nav {
+  display: flex;
+  background-color: #62abff;
+  padding: 0.4em 1em;
+}
+
+/* Enforces button-esque cursor and text size */
+.nav-logo {
+  cursor: pointer;
+  font-size: xx-large;
+}
+
+/* Forces all nav sections to have equal sizing */
+.nav-section {
+  flex: 1 1 auto;
+  align-self: center;
+}
+
+/* Spacing and alignment for nav items section */
+.nav-items {
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+}
+
+/* Alignment and formatting for nav login */
+.nav-login {
+  text-align: end;
+  font-style: italic;
+}
+
+/* Formatting and spacing for individual nav items */
+.nav-item {
+  background-color: #3191fd;
+  padding: 0.25em 2em;
+  border-radius: 0.5em;
+  margin: 0.25em 1em;
+  white-space: nowrap;
+}
+
+/* Class formatting applied to active links */
+.active {
+  background-color: #0051ff;
+}
